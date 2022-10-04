@@ -19,8 +19,14 @@ function startPromiseCreating (e) {
   d = Number(d);
   s = Number(s);
   a = Number(a);
-  const elements = {d, s, a, p};
+  if (d < 0 && s < 0 && a < 0) {
+    const elements = {d, s, a, p};
   dataBandler(elements);
+} else Notify.warning('The number entered must be positive or zero!', {
+  position: 'left-top',
+fontSize: '34px',
+width: '50vw',
+});
 }
 
 
