@@ -2,6 +2,7 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
 import { Notify } from "notiflix";
+import {timerSectionOptions} from './notify-options';
 
 
 const refs = {
@@ -18,7 +19,7 @@ const labelUI = document.querySelectorAll('.label');
 const body = refs.body;
 const inputField = refs.input;
 const button = refs.startBtn;
-button.disabled = true;
+ button.disabled = true;
  
 const options = {
     enableTime: true,
@@ -31,14 +32,7 @@ const options = {
         const currentTime = Date.now();
         const difference = finalTime - currentTime;
         if(difference <= 10000) {
-           Notify.failure("Please choose a date in the future", {
-            position: 'center-center',
-            width: '50vw',
-            fontSize: '36px',
-            backOverlay: true,
-            backOverlayColor: 'rgba(0,0,0,0.9)',
-            clickToClose: true,
-           });
+           Notify.failure("Please choose a date in the future", timerSectionOptions);
         } else {
             button.disabled = false;
         };
@@ -57,10 +51,12 @@ const options = {
 
 function startTimer(value) {
       const intId = setInterval(() => {
+        body.style.backgroundColor = 'black';
         refs.input.disabled = true;
         pointsMaker ();
        
         button.disabled = true;
+        body.classList.add('bckg1');
    const currentTime = Date.now();
    const difference = value - currentTime;
    if(difference < 1000) {
@@ -75,29 +71,30 @@ function addLeadingZero(value){
         return String(value).padStart(2, '0');
       }
 
-      function stopTimer (v) {
-        clearInterval(v);
-        body.classList.add('bckg');
-          }
-        
-        function changeValueUI (o) {
-        refs.secondsUI.textContent = `${o.seconds}`;
-        refs.minutesUI.textContent = `${o.minutes}`;
-        refs.hoursUI.textContent = `${o.hours}`;
-        refs.daysUI.textContent = `${o.days}`;
-        
-        }
-        
-        function pointsMaker () {
-            for (let i = 0; i < labelUI.length; i++) {
-                const e = labelUI[i];
-                if(i >= labelUI.length - 1) {
-                e.textContent = '';
-            } else e.textContent = ':';
-             e.classList.add('value');
-          
-            }
-        }
+        function stopTimer (v) {
+clearInterval(v);
+body.classList.remove('bckg1');
+body.classList.add('bckg2');
+  }
+
+function changeValueUI (o) {
+refs.secondsUI.textContent = `${o.seconds}`;
+refs.minutesUI.textContent = `${o.minutes}`;
+refs.hoursUI.textContent = `${o.hours}`;
+refs.daysUI.textContent = `${o.days}`;
+
+}
+
+function pointsMaker () {
+    for (let i = 0; i < labelUI.length; i++) {
+        const e = labelUI[i];
+        if(i >= labelUI.length - 1) {
+        e.textContent = '';
+    } else e.textContent = ':';
+     e.classList.add('value');
+  
+    }
+}
 
       function convertMs(ms) {
     // Number of milliseconds per unit of time

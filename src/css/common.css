@@ -17,8 +17,11 @@ ul {
 }
 a {
   color: rgba(255, 0, 0, 0.918);
-  font-size: 42px;
-  text-decoration: none;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 0.2em;
+  text-shadow:-4px 2px 6px #FFFFFF;
+  text-decoration:none;
 
 }
 
@@ -26,16 +29,26 @@ img {
   display: block;
   max-width: 100%;
 }
+
 input {
+padding-left: 40px;
+font-size: 24px;
+font-weight: 500;
+
+}
+input#datetime-picker {
   padding-left: 70px;
   font-weight: 700;
   font-size: 32px;
+  letter-spacing: .1em;
 }
 button {
   font-weight: 700;
   font-size: 32px;
+  letter-spacing: .1em;
   cursor: pointer;
 }
+
 .timer {
   display: flex;
   margin-top: 200px;
@@ -45,14 +58,55 @@ button {
 font-family:monospace;
 font: weight 900px;;
 font-size: 96px;
+letter-spacing: 0.1em;
 color: rgba(246, 255, 0, 0.963);
 }
-.bckg {
-  background-image: url('../img/mb.gif');
+
+.label {
+  letter-spacing: .2em;
+}
+.bckg2 {
+  background-image: url('../img/boom.gif');
+  background-size:cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.bckg2::after {
+  content: 'СЛАВА ГЕРОЯМ!!!';
+  color: rgb(224, 244, 6);
+  font-weight: 900;
+  font-size: 75px;
+  
+}
+.bckg1 {
+  background-image: url('../img/box.jpg');
   background-size:cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  
+  justify-content:space-around;
+  align-items: flex-end;
+  font-weight: 500;
+  font-size: 25px;
+  text-shadow: 1px 4px 10px rgba(0,0,0,0.6);
+  color: darkblue;
+  text-align: center;
+}
 
-
+button[type="submit"] {
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 25px;
+  color: rgb(244, 233, 231);
+  background-color: rgba(0, 81, 255, 0.6);
+  border-radius: 4px;
+  border: none;
+  box-shadow: 2px 4px 14px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px 4px 14px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 4px 14px 0px rgba(0,0,0,0.75);
+}
