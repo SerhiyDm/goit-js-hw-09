@@ -19,14 +19,20 @@ function startPromiseCreating (e) {
   d = Number(d);
   s = Number(s);
   a = Number(a);
-  if (d < 0 && s < 0 && a < 0) {
-    const elements = {d, s, a, p};
-  dataBandler(elements);
-} else Notify.warning('The number entered must be positive or zero!', {
-  position: 'left-top',
-fontSize: '34px',
-width: '50vw',
-});
+  if (d < 0 || s < 0 || a <= 0) {
+    Notify.warning('The number entered must be positive or zero* !', {
+      cssAnimationStyle: 'from-left',
+    position: 'center-top',
+  fontSize: '34px',
+  width: '50vw',
+  warning: {
+    textColor: '#000', 
+},
+  }); 
+  return;
+}
+const elements = {d, s, a, p};
+dataBandler(elements);
 }
 
 
@@ -57,3 +63,5 @@ function dataBandler ({d, s, a, p}) {
       },d, p, d)
    }
 }
+const x = document.querySelector('#NotiflixNotify');
+console.log(x);
