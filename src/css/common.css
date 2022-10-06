@@ -12,6 +12,7 @@ text-align: center;
   color: #212121;
   line-height: 1.5;
 }
+
 ul {
   list-style: none;
 }
@@ -28,6 +29,13 @@ a {
 img {
   display: block;
   max-width: 100%;
+}
+.body {
+  background-image: linear-gradient(
+    to top left,
+    #161718f2 55%,
+    #f91303f3 55%
+  );
 }
 
 input {
@@ -65,6 +73,7 @@ color:rgba(249, 249, 3, 0.954);
 
 .label {
   letter-spacing: .2em;
+  color: rgba(249, 249, 3, 0.954);
 }
 .bckg2 {
   background-image: url('../img/boom.gif');

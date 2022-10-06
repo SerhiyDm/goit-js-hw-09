@@ -30,7 +30,7 @@ const options = {
         const currentTime = Date.now();
         const difference = finalTime - currentTime;
         if(difference <= 10000) {
-           Notify.failure("Please choose a date in the future", timerSectionOptions);
+           Notify.failure("!! Please choose a date in the future", timerSectionOptions);
         } else {
             button.disabled = false;
         };

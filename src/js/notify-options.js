@@ -4,7 +4,9 @@ export const timerSectionOptions = {
     width: '50vw',
     fontSize: '34px',
     failure: {
-        textColor: '#000', 
+        background:'#000',
+        textColor: '#ff0000', 
+        notiflixIconColor: '#ff0000',
         fontAwesomeIconColor: 'rgba(8, 0, 0, 0.721)',
         },
     cssAnimationStyle: 'from-left',
