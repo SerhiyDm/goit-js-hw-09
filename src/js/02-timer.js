@@ -14,13 +14,11 @@ const refs = {
 minutesUI: document.querySelector('[data-minutes]'),
     secondsUI: document.querySelector('[data-seconds]'),
 }
-
 const labelUI = document.querySelectorAll('.label');
 const body = refs.body;
 const inputField = refs.input;
 const button = refs.startBtn;
  button.disabled = true;
- 
 const options = {
     enableTime: true,
     time_24hr: true,
@@ -48,13 +46,13 @@ const options = {
   };
 
   flatpickr(inputField, options);
-
+  
 function startTimer(value) {
-      const intId = setInterval(() => {
-        body.style.backgroundColor = 'black';
+  
+  const intId = setInterval(() => {
+       body.style.backgroundColor = 'black';
         refs.input.disabled = true;
         pointsMaker ();
-       
         button.disabled = true;
         body.classList.add('bckg1');
    const currentTime = Date.now();
